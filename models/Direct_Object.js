@@ -65,6 +65,10 @@ var Direct_Object = Part_Of_Speech.extend({
 	    var layer = this.get('layer');
 	    stage.add(layer);			
 					
+	},
+	render_actions: function(){
+		
+		
 	}
 
 	
