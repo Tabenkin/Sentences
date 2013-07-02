@@ -1,0 +1,23 @@
+div#canvas{
+	
+	background-color: white;
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	top: 100px;
+	left: 500px;
+	
+	
+}
+
+div#mainCanvas{
+	
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	top: 100px;
+	left: 500px;
+
+	
+	
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		
+		
+		<script type='text/javascript' src='../js/jquery-1.9.1.min.js'></script>
+		<script type='text/javascript' src='../js/jquery-ui-1.10.3.custom.min.js'></script>
+		<script type='text/javascript' src='../js/jquery.pulse.min.js'></script>
+		<script type='text/javascript' src='../js/jquery.simplemodal.1.4.4.min.js'></script>
+		<script type="text/javascript" src='../js/jquery.svg.package-1.4.5/jquery.svg.js'></script>
+		<script type="text/javascript" src='../js/Kinetic.js'></script>
+		<script type="text/javascript" src='../js/bootstrap.min.js'></script>
+
+	
+
+		<link href="../CSS/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="../CSS/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" media="screen"/>
+		
+		<style type="text/css">
+			@import "../js/jquery.svg.package-1.4.5/jquery.svg.css";
+				
+		</style>
+	
+	
+	</head>
+	
+	<style>
+	
+	html {
+	
+		height: 100%;
+		width: 100%;	
+			
+		background: rgba(246,248,248,1);
+		background: -moz-linear-gradient(top, rgba(246,248,248,1) 0%, rgba(181,193,196,1) 96%, rgba(178,191,194,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(246,248,248,1)), color-stop(96%, rgba(181,193,196,1)), color-stop(100%, rgba(178,191,194,1)));
+		background: -webkit-linear-gradient(top, rgba(246,248,248,1) 0%, rgba(181,193,196,1) 96%, rgba(178,191,194,1) 100%);
+		background: -o-linear-gradient(top, rgba(246,248,248,1) 0%, rgba(181,193,196,1) 96%, rgba(178,191,194,1) 100%);
+		background: -ms-linear-gradient(top, rgba(246,248,248,1) 0%, rgba(181,193,196,1) 96%, rgba(178,191,194,1) 100%);
+		background: linear-gradient(to bottom, rgba(246,248,248,1) 0%, rgba(181,193,196,1) 96%, rgba(178,191,194,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f8', endColorstr='#b2bfc2', GradientType=0 );
+		
+		
+	}
+
+	
+	</style>
+	
+	<body>
+		
+		<div id='mouse_coordinates'></div>
+		<div id='mainCanvas'></div>
+		
+		<script type='text/template' id='enterSentenceForm'>
+			
+				<h3>Enter a sentence:</h3>
+				<br/>
+				<input type='text' name='sentence' id='sentence_input'/>
+				<br/>
+				<input type='submit' value='Submit' class='btn btn-primary' id='submit_sentence'/>
+					
+		
+		</script>
+		
+		
+		<link href="../views/user_access_view.css" rel="stylesheet" media="screen"/>
+		
+		<script type='text/template' id='loginForm'>
+		
+		
+				<div id="input_container">					
+					<h3 class='userAccessForm'>Access Code:</h3> 
+					<input type='text' class='userAccessForm' id='access_code' name='access_code'/>
+					<p></p>
+				</div>
+				<button class='btn btn-primary userAccessForm' id='submit_access_request'>Login</button>
+		
+		</script>
+		
+		<script src="app.js"></script>
+		<script src="../js/Underscore-min.js"></script>
+		<script src="../js/Backbone-min.js"></script>
+		
+		<script src="../models/word.js"></script>
+		<script src="../models/node_model.js"></script>
+		<script src="../models/CTX_Drawer.js"></script>
+		
+		<script src="../models/Part_Of_Speech.js"></script>
+		<script src="../models/Adj.js"></script>
+		<script src="../models/Main_Subject.js"></script>
+		<script src="../models/Main_Verb.js"></script>
+		<script src="../models/Predicate.js"></script>		
+		<script src="../models/Preposition.js"></script>		
+		<script src="../models/Direct_Object.js"></script>	
+		<script src="../models/Indirect_Object.js"></script>	
+		
+		
+				
+		<script src="../views/enter_sentence.js"></script>
+		<script src="../views/user_access_view.js"></script>
+		
+		<link href="../views/canvas.css" rel="stylesheet" media="screen"/>
+		<script src="../views/canvas.js"></script>
+		
+		<link href="../views/node_view.css" rel="stylesheet" media="screen"/>
+		<script src="../views/node_view.js"></script>
+		
+		<script src="../views/word_view.js"></script>
+		<script src="../views/main_subject_view.js"></script>
+		
+	</body>
+	
+</html>
