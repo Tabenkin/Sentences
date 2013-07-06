@@ -30,7 +30,8 @@ var Part_Of_Speech = Backbone.Model.extend({
 			
 			fill:'white',
 			stroke: 'white',
-			strokeWidth: 1
+			strokeWidth: 1,
+			opacity: 0	
 			
 					
 		});
@@ -41,7 +42,8 @@ var Part_Of_Speech = Backbone.Model.extend({
 			
 			fill:'white',
 			stroke: 'white',
-			strokeWidth: 1			
+			strokeWidth: 1,
+			opacity: 0			
 						
 		});
 		this.set('pending_action', pending_action);
@@ -65,6 +67,26 @@ var Part_Of_Speech = Backbone.Model.extend({
 		var arrow = document.createElement('DIV');
 		$(arrow).addClass('arrow');
 		
+		
+		
+		$(popover).mouseover(function(){
+			
+			
+			$(this).show();
+			
+			
+		})
+		
+		$(popover).mouseout(function(){
+			
+			
+			$(this).hide();
+			
+		})
+		
+		
+		
+		
 		$(popover).append(arrow);		
 		$(document.body).append(popover);
 
@@ -77,6 +99,8 @@ var Part_Of_Speech = Backbone.Model.extend({
 		
 	},
 	set_kText_text: function(text){
+		
+		console.log('new text should be rendered?');
 		
 		kText = this.get('kText');		
 		kText.setText(text);
@@ -157,7 +181,34 @@ var Part_Of_Speech = Backbone.Model.extend({
 			var pop_width = 100;
 			
 			var pop_x = x + (width / 2) - (pop_width / 2) + 500;
-			var pop_y = y - height - pop_height + 100;
+			var pop_y = y - height - pop_height + 100 + 5;
+			
+			
+			
+			$(popover).droppable({
+				
+				drop: function(event, ui){
+					
+					$(ui.draggable).remove();
+					
+					$(this).remove();
+					
+					var model = pof.get('model');
+					
+					var text = $(ui.draggable).html();
+					
+		
+					model.set('text', $(ui.draggable).html());
+					
+					
+					
+				}
+				
+				
+				
+			})
+			
+			
 			
 			
 			$(popover).css({
@@ -179,21 +230,16 @@ var Part_Of_Speech = Backbone.Model.extend({
 			      
 		});
 		
-		/*
+	
 		text_action.on('mouseout', function(){
 			
 			var popover = pof.get('popover');
 			
-			$(popover).css({
-				
-				'display' : 'none'	
-				
-			})
+			$(popover).hide();
 			
 			
 			
 		});
-*/
 		
 		pending_action.setX(x);
 		pending_action.setY(y);

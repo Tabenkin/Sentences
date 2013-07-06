@@ -15,7 +15,31 @@ var Word_View = Backbone.View.extend({
 		this.$el.css('position', 'absolute');
 		
 		
-		this.$el.draggable();
+		this.$el.draggable({
+			
+			revert: 'invalid',
+			revertDuration: 100,
+			start:function(){
+								
+				$(this).css({
+				
+					'pointer-events': 'none',
+					'z-index':9999
+					
+					
+					
+				});
+				
+			},		
+			stop: function(){
+			
+				$(this).css('pointer-events', 'auto');		
+			
+			}
+		
+			
+			
+		});
 		
 		
 		

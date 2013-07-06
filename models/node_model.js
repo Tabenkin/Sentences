@@ -18,7 +18,7 @@ var Node_Model = Backbone.Model.extend({
 		
 		
 		this.on('change:text', function(){
-					
+		
 			this.update_node();
 					
 		});
